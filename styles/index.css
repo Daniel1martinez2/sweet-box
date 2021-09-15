@@ -138,4 +138,8 @@ html, body {
   -webkit-animation: circle 3s infinite;
           animation: circle 3s infinite;
 }
+
+.hidden {
+  display: none !important;
+}
 /*# sourceMappingURL=index.css.map */

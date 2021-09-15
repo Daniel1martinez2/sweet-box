@@ -1,7 +1,7 @@
 import {colors} from './colors.js';
 import {createSlide} from './slide.js';
 import {DUMMY_DATA} from './DUMMY_DATA.js'; 
-import {sliderContainer} from './domElements.js'; 
+import {sliderContainer, animaWrapper} from './domElements.js'; 
 
 // set up our state
 let isDragging = false; 
@@ -81,6 +81,11 @@ function touchEnd() {
   setPositionByIndex()
 
   sliderContainer.classList.remove('grabbing')
+  if(currentIndex === DUMMY_DATA.length - 1){
+    animaWrapper.classList.add('hidden')
+  }else{
+    animaWrapper.classList.remove('hidden')
+  }
 }
 
 function animation() {
