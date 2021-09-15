@@ -13,10 +13,9 @@ let currentIndex = 0;
 
 //Using the data array to create the elements and adding each one to the dom
 DUMMY_DATA.forEach((slide, index) => {
-
   const currentSlide = createSlide(slide); 
   sliderContainer.appendChild(currentSlide);
-  currentSlide.style.backgroundColor = colors[Math.floor(Math.random()*DUMMY_DATA.length)]; 
+  currentSlide.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)]; 
   
   const slideImage = currentSlide.querySelector('img')
   // disable default image drag
@@ -33,8 +32,6 @@ DUMMY_DATA.forEach((slide, index) => {
 
 });
 
-
-
 // make responsive to viewport changes
 window.addEventListener('resize', setPositionByIndex)
 
@@ -45,14 +42,13 @@ window.oncontextmenu = function (event) {
   return false
 }
 
-
-
 function getPositionX(event) {
   return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
 }
 
 // use a HOF so we have index in a closure
 function touchStart(index) {
+  
   return function (event) {
     currentIndex = index
     startPos = getPositionX(event)
