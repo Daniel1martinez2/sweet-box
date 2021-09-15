@@ -108,6 +108,7 @@ html, body {
 }
 
 .anima__wrapper {
+  pointer-events: none;
   opacity: 0.4;
   position: absolute;
   width: 100vw;

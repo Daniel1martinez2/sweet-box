@@ -76,6 +76,7 @@ html, body {
 
 .anima__wrapper{
   // background-color:red; 
+  pointer-events: none;
   opacity: 0.4;
   position: absolute;
   width: 100vw;
