@@ -33,20 +33,16 @@ html, body {
   justify-content: center;
   padding: 1rem;
 }
-// .slide:nth-child(odd){
-//   background-color: purple;
-// }
-// .slide:nth-child(even){
-//   background-color: red;
-// }
+
 .slide img{
   max-width: 100%;
-  max-height: 100%;
+  max-height: 300px;
   transition: transform 0.3s ease-in-out;
-  /*box-shadow: 5px 5px 50px -1px var(--shadow);*/
+  box-shadow: 5px 5px 50px -1px var(--shadow);
   border-radius: 4px;
   user-select: none;
   margin-bottom: 1em;
+  
 }
 
 .grabbing {
@@ -55,7 +51,7 @@ html, body {
 
 .grabbing .slide img{
   transform: scale(0.9);
-  /* box-shadow: 5px 5px 40px -1px var(--shadow); */
+  box-shadow: 5px 5px 40px -1px var(--shadow);
 }
 .slide h3{
   text-align: center !important;
@@ -83,7 +79,6 @@ html, body {
   height: 100px;
   z-index: 100000;
   display: flex;
-
   bottom: 70px; 
   left: 0px; 
   
