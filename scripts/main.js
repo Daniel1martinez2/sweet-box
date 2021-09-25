@@ -12,25 +12,31 @@ let animationID;
 let currentIndex = 0; 
 
 //Using the data array to create the elements and adding each one to the dom
-DUMMY_DATA.forEach((slide, index) => {
-  const currentSlide = createSlide(slide); 
-  sliderContainer.appendChild(currentSlide);
-  currentSlide.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)]; 
-  
-  const slideImage = currentSlide.querySelector('img')
-  // disable default image drag
-  slideImage.addEventListener('dragstart', (e) => e.preventDefault())
-  // touch events
-  currentSlide.addEventListener('touchstart', touchStart(index))
-  currentSlide.addEventListener('touchend', touchEnd)
-  currentSlide.addEventListener('touchmove', touchMove)
-  // mouse events
-  currentSlide.addEventListener('mousedown', touchStart(index))
-  currentSlide.addEventListener('mouseup', touchEnd)
-  currentSlide.addEventListener('mousemove', touchMove)
-  currentSlide.addEventListener('mouseleave', touchEnd)
+export const renderSlides = async () => {
 
-});
+  DUMMY_DATA.forEach((slide, index) => {
+    const currentSlide = createSlide(slide); 
+    sliderContainer.appendChild(currentSlide);
+    currentSlide.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)]; 
+    
+    const slideImage = currentSlide.querySelector('img')
+    // disable default image drag
+    slideImage.addEventListener('dragstart', (e) => e.preventDefault())
+    // touch events
+    currentSlide.addEventListener('touchstart', touchStart(index))
+    currentSlide.addEventListener('touchend', touchEnd)
+    currentSlide.addEventListener('touchmove', touchMove)
+    // mouse events
+    currentSlide.addEventListener('mousedown', touchStart(index))
+    currentSlide.addEventListener('mouseup', touchEnd)
+    currentSlide.addEventListener('mousemove', touchMove)
+    currentSlide.addEventListener('mouseleave', touchEnd)
+  
+  });
+}; 
+
+
+
 
 // make responsive to viewport changes
 window.addEventListener('resize', setPositionByIndex)
