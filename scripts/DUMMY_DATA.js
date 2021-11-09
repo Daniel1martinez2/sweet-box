@@ -52,7 +52,7 @@ db.collection('pedidos').doc(userUID).get().then(doc => {
   const user = doc.data();
 
   console.log(user);
-  DUMMY_DATA = user.data;
+  // DUMMY_DATA = user.data;
   renderSlides();
 });
 
